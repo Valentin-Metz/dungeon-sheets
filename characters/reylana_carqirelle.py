@@ -69,13 +69,22 @@ magic_items = ()  # Example: ('ring of protection',)
 armor = "leather armor"  # Eg "leather armor"
 shield = "wooden shield"  # Eg "shield"
 
-equipment = """- Explorer's pack\n
-- Druidic focus\n
-(Yew wand)\n
-- Herbalism kit\n
+equipment = """- Explorer's pack:\n
+    - Backpack\n
+    - Bedroll\n
+    - Mess kit\n
+    - Tinderbox\n
+    - 10 torches\n
+    - 10 days of rations\n
+    - Waterskin\n
+    - 50 feet of hempen rope\n
+- Druidic focus (yew wand)\n
+- Herbalism kit (p)\n
 - Common clothes\n
 - Winter blanket\n
-- A scroll case stuffed full of notes from your studies or prayers\n
+- Scimitar\n
+- Leather armor\n
+- A scroll case stuffed full of notes about various plants and animals\n
 """
 
 attacks_and_spellcasting = ""
