@@ -64,9 +64,7 @@ weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
 proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
-languages = """Common, Elvish
-
-Thieves' Cant, Deep Speech"""
+languages = """Common, Elvish, Thieves' Cant, Deep Speech"""
 
 # Inventory
 cp = 0

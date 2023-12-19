@@ -214,7 +214,7 @@ This magical amulet enhances her connection to the natural world,
 providing a subtle boost to her druidic abilities
 and serving as a symbol of her commitment to preserving the balance of the forest."""
 
-portrait = "reylana_carqirelle.jpg"
+portrait = "reylana_carquirelle.jpg"
 symbol = "squirrel.jpg"
 
 images = []
