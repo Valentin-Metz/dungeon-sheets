@@ -192,7 +192,7 @@ class Character(Creature):
             self.images = [(self.symbol, 1, 492, 564, 145, 113)] + self.images
         self.portrait = attrs.pop("portrait", None)
         if self.portrait:
-            self.images = [(self.portrait, 1, 117, 551, 175, 220)] + self.images
+            self.images = [(self.portrait, 1, 117, 551, 170, 220)] + self.images
         # parse all other attributes
         self.set_attrs(**attrs)
         self.__set_max_hp(attrs.get("hp_max", None))
