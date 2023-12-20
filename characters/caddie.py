@@ -42,7 +42,7 @@ charisma = 16
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = ("acrobatics", "performance")
+skill_proficiencies = ("acrobatics", "performance", "deception", "intimidation")
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
