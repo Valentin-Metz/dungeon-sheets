@@ -14,10 +14,10 @@ summary = """The characters need to find Astronomy Professor Eulertin a top a sn
 """
 
 party = [
-    "elitrana_pineth.py",
-    "emilia_shadowthorn.py",
-    "reylana_carquirelle.py",
-    "virgilius_goldriver.py",
+    "rogue/elitrana_pineth/elitrana_pineth.py",
+    "ranger/emilia_shadowthorn/emilia_shadowthorn.py",
+    "druid/reylana_carquirelle/reylana_carquirelle.py",
+    "bard/virgilius_goldriver/virgilius_goldriver.py",
 ]
 
 # A descriptive title to appear at the top of the document.
