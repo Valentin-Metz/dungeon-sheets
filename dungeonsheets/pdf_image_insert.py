@@ -1,12 +1,13 @@
 import io
+from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
 
 def insert_image_into_pdf(
-    destination_pdf: str,
-    source_image_path: str,
+    destination_pdf: Path,
+    source_image_path: Path,
     page_target_index: int,
     x_center: int,
     y_center: int,

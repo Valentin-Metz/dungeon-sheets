@@ -4,6 +4,7 @@ import math
 import os
 import re
 import warnings
+from pathlib import Path
 from types import ModuleType
 from typing import Sequence, Union, MutableMapping
 
@@ -108,13 +109,15 @@ class Character(Creature):
     _proficiencies_text = list()
 
     # Appearance
-    portrait: str | None = None  # Path to image file
-    symbol: str | None = None  # Path to image file
+    portrait: Path | None = None  # Path to image file
+    symbol: Path | None = None  # Path to image file
     # List of custom images:
     # [(path_to_image_file, page_index,
     # x_center_coordinate, y_center_coordinate,
     # max_width, max_height)]
-    images: list[tuple[str, int, int, int, int]] = []
+    images: list[tuple[Path, int, int, int, int, int]] = []
+
+    character_file_location: Path
 
     age = 0
     height = ""
@@ -195,6 +198,26 @@ class Character(Creature):
             self.images = [(self.portrait, 1, 117, 551, 170, 220)] + self.images
         # parse all other attributes
         self.set_attrs(**attrs)
+        self.images = [
+            (
+                Path(path),
+                page_index,
+                x_center_coordinate,
+                y_center_coordinate,
+                max_width,
+                max_height,
+            )
+            if Path(path).is_absolute()
+            else (
+                Path(self.character_file_location) / path,
+                page_index,
+                x_center_coordinate,
+                y_center_coordinate,
+                max_width,
+                max_height,
+            )
+            for path, page_index, x_center_coordinate, y_center_coordinate, max_width, max_height in self.images
+        ]
         self.__set_max_hp(attrs.get("hp_max", None))
 
     def clear(self):
