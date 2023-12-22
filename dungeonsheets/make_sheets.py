@@ -340,6 +340,7 @@ def make_gm_sheet(
     # Warn about any unhandled sheet properties
     gm_props.pop("dungeonsheets_version")
     gm_props.pop("sheet_type")
+    gm_props.pop("source_file_location")
     if len(gm_props.keys()) > 0:
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
         log.warning(msg)

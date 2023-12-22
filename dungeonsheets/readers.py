@@ -644,7 +644,7 @@ class PythonCharacterReader(BaseCharacterReader):
         for prop_name in dir(module):
             if prop_name[0:2] != "__":
                 char_props[prop_name] = getattr(module, prop_name)
-        char_props["character_file_location"] = os.path.dirname(filename)
+        char_props["source_file_location"] = os.path.dirname(filename)
         return char_props
 
 

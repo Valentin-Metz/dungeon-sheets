@@ -117,7 +117,7 @@ class Character(Creature):
     # max_width, max_height)]
     images: list[tuple[Path, int, int, int, int, int]] = []
 
-    character_file_location: Path
+    source_file_location: Path
 
     age = 0
     height = ""
@@ -196,8 +196,7 @@ class Character(Creature):
         self.portrait = attrs.pop("portrait", None)
         if self.portrait:
             self.images = [(self.portrait, 1, 117, 551, 170, 220)] + self.images
-        # parse all other attributes
-        self.set_attrs(**attrs)
+        self.source_file_location = attrs.pop("source_file_location")
         self.images = [
             (
                 Path(path),
@@ -209,7 +208,7 @@ class Character(Creature):
             )
             if Path(path).is_absolute()
             else (
-                Path(self.character_file_location) / path,
+                Path(self.source_file_location) / path,
                 page_index,
                 x_center_coordinate,
                 y_center_coordinate,
@@ -218,6 +217,8 @@ class Character(Creature):
             )
             for path, page_index, x_center_coordinate, y_center_coordinate, max_width, max_height in self.images
         ]
+        # parse all other attributes
+        self.set_attrs(**attrs)
         self.__set_max_hp(attrs.get("hp_max", None))
 
     def clear(self):
@@ -590,6 +591,8 @@ class Character(Creature):
         for attr, val in attrs.items():
             if attr == "dungeonsheets_version":
                 pass  # Maybe we'll verify this later?
+            elif attr == "character_file_location":
+                pass
             elif attr == "weapons":
                 if isinstance(val, str):
                     val = [val]
